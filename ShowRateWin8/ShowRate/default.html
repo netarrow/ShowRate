@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ShowRate</title>
+
+        <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+        <link href="/css/default.css" rel="stylesheet" />
+
+        <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+        <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+        <script src="/Scripts/jquery-2.1.1.min.js"></script>
+        <script src="/Scripts/apiWrapper.js"></script>
+        <script src="/js/binding.js"></script>
+
+    </head>
+
+    <body>
+        <a href="tests.html">Check all tests</a>
+        <div id="matches" style="height: 800px">
+              <div id="matchList" data-win-control="WinJS.UI.ListView" style="height: 800px"></div>
+                <div id="matchTemplate" data-win-control="WinJS.Binding.Template">
+                    <div style="display: inline-block">
+                        <img data-win-bind="src:first.image"  width="120" height="200" />
+                        <h4 data-win-bind="innerText:first.title"></h4>
+                        <h6 data-win-bind="innerText:first.genresList" style="max-width: 120px; word-break:keep-all"></h6>
+                        <hr/>
+                        <img data-win-bind="src:second.image"  width="120" height="200" />
+                        <h4 data-win-bind="innerText:second.title"></h4>
+                        <h6 data-win-bind="innerText:second.genresList" style="max-width: 120px; word-break:keep-all"></h6>
+                        <br/>
+                    </div>
+                </div>
+        </div>
+
+    </body>
+</html>
+
+              
+          

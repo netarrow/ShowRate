@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ShowRate</title>
+
+        <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+        <link href="/css/default.css" rel="stylesheet" />
+
+        <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+        <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+        <script src="/Scripts/jquery-2.1.1.min.js"></script>
+        <script src="/Scripts/apiWrapper.js"></script>
+        <script src="/js/default.js"></script>
+
+        <style>
+            .flipview .item {
+                width: 900px;
+                height: 600px;
+            }
+
+            #flippenView {
+                height: 500px;
+            }
+
+        
+        </style>
+
+    </head>
+
+    <body>
+        <a href="tests.html">Check all tests</a>
+        <div  id="header">
+            <h1 data-win-bind="innerText: Compares"></h1>
+            <h1 data-win-bind="innerText: Valued"></h1>
+        </div>
+        <div class="flipview ">
+            <div id="flippenTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+               
+                <div  data-win-control="WinJS.UI.ViewBox">
+                    <div style="display: table">
+                        <div style="display: table-row">
+                            <h1 data-win-bind="innerText: genreCompared" ></h1>
+                        </div>
+                        <figure id="first" style="display: table-cell">
+                            <img data-win-bind="src:first.image; onclick: this Converters.leftShowWins" />
+                            <figcaption>
+                                <h1 data-win-bind="innerText: first.genresList"  style="word-break:keep-all; max-width: 70%"></h1>
+                            </figcaption>
+                        </figure>
+                        
+                        <figure id="second" style="display: table-cell">
+                            <img data-win-bind="src:second.image; onclick: this Converters.rightShowWins" />
+                            <figcaption>
+                                <h1 data-win-bind="innerText: second.genresList" style="word-break: keep-all; max-width: 70%"></h1>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+            </div>
+
+            <section aria-label="Main content" role="main">
+                <div id="flippenView"
+                     data-win-control="WinJS.UI.FlipView"
+                     data-win-options="{itemDataSource: ViewModel.Shows.dataSource, itemTemplate: flippenTemplate}">
+                </div>
+
+            </section>
+        </div>
+
+    </body>
+</html>
+
+              
+          
